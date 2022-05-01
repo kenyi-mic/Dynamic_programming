@@ -7,11 +7,9 @@ const howSum = (targetSum, numbers, memo = {}) => {
     const remainder = targetSum - num;
     const remainderResult = howSum(remainder, numbers, memo);
     if (remainderResult !== null) {
-      memo[targetSum] = [...remainderResult, num];
-      return memo[targetSum];
+      return [...remainderResult, num];
     }
   }
-  memo[targetSum] = null;
   return null;
 };
 

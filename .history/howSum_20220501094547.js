@@ -5,13 +5,11 @@ const howSum = (targetSum, numbers, memo = {}) => {
 
   for (let num of numbers) {
     const remainder = targetSum - num;
-    const remainderResult = howSum(remainder, numbers, memo);
+    const remainderResult = howSum(remainder, numbers);
     if (remainderResult !== null) {
-      memo[targetSum] = [...remainderResult, num];
-      return memo[targetSum];
+      return [...remainderResult, num];
     }
   }
-  memo[targetSum] = null;
   return null;
 };
 
